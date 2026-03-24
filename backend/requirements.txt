@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+requests
+pydantic
+Pillow
+openai
+nltk
+textblob
+pyttsx3
+python-dotenv
+diffusers 
+transformers 
+torch
+requests
+elevenlabs
