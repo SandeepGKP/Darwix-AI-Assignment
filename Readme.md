@@ -215,15 +215,3 @@ Darwix_AI/
 - Requires valid Stability AI API key
 - Images are served via the `/static` endpoint
 
-## License
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## Support
-For questions or support, please open an issue in the repository.
