@@ -9,8 +9,8 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 #  CORS FIX
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # not "*"
-    allow_credentials=True,
+    allow_origins=["http://localhost:5173"], 
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

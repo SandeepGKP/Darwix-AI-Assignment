@@ -9,9 +9,15 @@ export default function PitchVisualizer() {
     try {
       const res = await generateStoryboard(text);
       setData(res.data.storyboard);
+      if (res.status === 409) {
+        // Handle quota exceeded
+        alert("Too many requests or quota exceeded. Please try again later.");
+        return;
+      }
 
     } catch (error) {
-         
+      console.error("Error generating storyboard:", error);
+      alert("Something went wrong . Please try again.");
     }
   };
 

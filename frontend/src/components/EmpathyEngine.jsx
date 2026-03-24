@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function EmpathyEngine() {
   const [text, setText] = useState("");
-  const [audio, setAudio] = useState("");
+  const [audio, setAudio] = useState([]);
 
   const handleClick = async () => {
     if (!text.trim()) return;
@@ -14,7 +14,7 @@ export default function EmpathyEngine() {
 
     console.log("Audio file :::", res.data.audio_file);
 
-    setAudio(res.data.audio_file);
+    setAudio((prev) => [res.data.audio_file,...prev]);
     setText("");
   };
 
@@ -35,12 +35,15 @@ export default function EmpathyEngine() {
         Generate
       </button>
 
-      {audio && (
-        <audio
-          controls
-          src={audio} 
-        />
-      )}
+      {audio &&
+        audio.map((val, i) => (
+          <audio
+            key={i}
+            controls
+            src={val}
+          />
+        ))
+      }
 
       <p className="text-white">
         {audio ? `${audio}` : ""}

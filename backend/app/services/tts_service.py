@@ -24,6 +24,4 @@ def generate_voice(text: str, emotion: str):
     engine.save_to_file(text, f"static/{filename}")
     engine.runAndWait()
     
-    return {
-        "audio_file": f"http://localhost:8000/static/{filename}"
-    }
+    return f"http://localhost:8000/static/{filename}"
